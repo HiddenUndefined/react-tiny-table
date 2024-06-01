@@ -1,0 +1,75 @@
+table
+  width: 100%
+  border-collapse: collapse
+  // Border
+  &.bordered
+    background-color: $color_gray
+    border-spacing: 0 1px
+    border-collapse: separate
+  // TR
+  tr
+    background-color: $color_dark
+    transition: background-color 0.35s ease-in-out
+    [column]
+      display: table
+    // Hover
+    &:hover
+      background-color: $color_gray
+  // TD & TH
+  td, th
+    min-height: 45px
+    padding: 12px 24px
+    font-size: 14px
+    text-align: left
+    color: $color_white
+    [subcontent]
+      color: $color_gray
+  td .cell-content,
+  th .cell-content
+    gap: 12px
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: center
+  td .cell-content,
+  th .cell-content
+    // Align
+    // TODO: Think about this classes variants for more optimized variant
+    .horizontal-align,
+    &.horizontal-align
+      &-start
+        text-align: left
+        justify-content: flex-start
+
+      &-center
+        text-align: center
+        justify-content: center
+
+      &-end
+        text-align: right
+        justify-content: flex-end
+    // Vertical align
+    .vertical-align,
+    &.vertical-align
+      &-start
+        align-items: flex-start
+        vertical-align: top
+
+      &-middle
+        align-items: center
+        vertical-align: middle
+
+      &-end
+        align-items: flex-end
+        vertical-align: bottom
+  // Elements styles
+  th
+    font-size: 14px
+    font-weight: 500
+    line-height: 15.6px
+    color: $color_gray
+  td
+    font-size: 16px
+    font-weight: 500
+    line-height: 19.2px
+    color: $color_white
